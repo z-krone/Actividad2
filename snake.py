@@ -61,7 +61,7 @@ def move():
     clear()
 
     snakeColor = choice(colors)
-    foodColor = choice(colors)
+    foodColor = choice([c for c in colors if c != snakeColor])
 
     for body in snake:
         square(body.x, body.y, 9, snakeColor)
