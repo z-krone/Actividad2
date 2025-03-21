@@ -29,6 +29,7 @@ def inside(head):
     """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
+# Se agregó la función para que la comida se mueva aleatoriamente un paso sin salirse de la ventana.
 def move_food():
     """Move food randomly one step while staying inside boundaries."""
     new_x = food.x + randrange(-1, 2) * 10  
@@ -59,7 +60,8 @@ def move():
         snake.pop(0)
 
     clear()
-
+    
+    # Se implementó la funcionalidad de que la víbora y la comida tengan colores diferentes entre sí, de una lista de 5 colores sin incluir el rojo.
     snakeColor = choice(colors)
     foodColor = choice([c for c in colors if c != snakeColor])
 
